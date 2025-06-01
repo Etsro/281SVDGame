@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Guess the Image</title>
+</head>
+<body>
+  <h1>Guess the Word!</h1>
+  <img src="{{ url_for('static', filename=image) }}?v={{ timestamp }}" width="300"><br><br>
+
+  <form action="/guess" method="POST">
+    <input type="text" name="guess" maxlength="3" required>
+    <button type="submit">Submit Guess</button>
+  </form>
+
+  {% if error %}
+    <p style="color: red;">{{ error }}</p>
+  {% endif %}
+
+  <p>Guess {{ guess_count }} of {{ max_guesses }} with {{ n }} singular values</p>
+  <p><a href="/reset">Restart</a></p>
+</body>
+</html>

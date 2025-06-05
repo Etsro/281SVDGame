@@ -1,18 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Guess the Image</title>
-  <script defer src="script.js"></script>
 </head>
 <body>
   <h1>Guess the Word!</h1>
-  <img id="game-image" src="" width="300"><br><br>
+  <img id="image" src="" width="300"><br><br>
+
   <form id="guess-form">
     <input type="text" id="guess-input" maxlength="10" required>
     <button type="submit">Submit Guess</button>
   </form>
+
   <p id="error" style="color: red;"></p>
-  <p id="game-status"></p>
-  <button onclick="restartGame()">Restart</button>
+  <p id="progress"></p>
+  <p><button onclick="resetGame()">Restart</button></p>
+
+  <script src="script.js"></script>
 </body>
 </html>
+

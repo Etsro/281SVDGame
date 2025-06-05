@@ -27,11 +27,6 @@ images = {
     "jet": "Jet.jpg",
 }
 
-images = {
-
-    "ng": "Ng.jpeg",
-
-}
 # Word list
 word = """
 the day was new and full of sun i got up from my bed pulled the rug back and placed my foot on the mat the cup i left near the pad was still warm my pen sat by the box right next to a tiny toy and an old cap it was time to pack my bag
@@ -63,16 +58,37 @@ prof ng is a math professor at northwestern she loves to teach math in class wit
 wordList = word.split()
 
 # Semantic difference function
+# Semantic difference function
 def SemanticDif(w1, w2, wordList):
+
+    allw1 = []
+    allw2 = []
+    #Check that both words are present
     if w1 not in wordList or w2 not in wordList:
-        return "[Word Not Included]"
+      SemDif = "One or both words not included!"
+      return allw1, allw2, SemDif
+    
+    # Find all indices of w1 and w2
     w1_indices = [i for i, word in enumerate(wordList) if word == w1]
     w2_indices = [i for i, word in enumerate(wordList) if word == w2]
-    if not w1_indices or not w2_indices:
-        return "[Word Not Included]"
-    diffs = [abs(i - min(w2_indices, key=lambda x: abs(x - i))) for i in w1_indices]
-    return round(np.mean(diffs), 2)
-
+    
+    for idx1 in w1_indices:
+        if not w2_indices:
+            # No w2 found at all
+            allw1.append(idx1)
+            allw2.append(None)
+            continue
+    
+        # Find the w2 index with minimal absolute distance to idx1
+        closest_w2 = min(w2_indices, key=lambda x: abs(x - idx1))
+        allw1.append(idx1)
+        allw2.append(closest_w2)
+    
+    #puts strings int arrays to find cosine similarity
+    allw1ar = np.array(allw1)
+    allw2ar = np.array(allw2)
+    return np.square(np.square(np.dot(allw1ar,allw2ar) / (np.linalg.norm(allw1ar) * np.linalg.norm(allw2ar))))
+   
 # SVD image blur
 def apply_svd(image_path, n, output_path):
     img = cv2.imread(image_path, cv2.IMREAD_GRAYSCALE)

@@ -1,4 +1,4 @@
-const backendURL = "https://your-backend-name.onrender.com"; // Replace with your Render URL
+const backendURL = "https://two81svdgame.onrender.com"; // Replace with your Render URL
 
 async function loadGame() {
   const res = await fetch(backendURL + "/");

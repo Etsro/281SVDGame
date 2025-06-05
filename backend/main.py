@@ -1,3 +1,4 @@
+from flask_cors import CORS
 from flask import Flask, request, session, send_from_directory, jsonify
 import numpy as np
 import cv2
@@ -8,6 +9,7 @@ import uuid
 
 app = Flask(__name__)
 app.secret_key = 'change_this_to_something_secure'
+CORS(app) 
 
 images = {
     "dog": "Doge.jpg",

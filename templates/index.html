@@ -8,7 +8,7 @@
   <img src="{{ url_for('static', filename=image) }}?v={{ timestamp }}" width="300"><br><br>
 
   <form action="/guess" method="POST">
-    <input type="text" name="guess" maxlength="3" required>
+    <input type="text" name="guess" maxlength="10" required>
     <button type="submit">Submit Guess</button>
   </form>
 

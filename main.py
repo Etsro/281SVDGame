@@ -14,9 +14,24 @@ app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0  # prevent image caching
 # Set of images
 images = {
     "dog": "Doge.jpg",
-    "cat": "Cat.jpg"
+    "cat": "Cat.jpg",
+    "bee": "Bee.jpg",
+    "van": "Van.jpg",
+    "ng": "Ng.jpeg",
+    "sun": "Sun.png",
+    "nut": "Nut.jpg",
+    "car": "Car.jpg",
+    "log": "Log.jpg",
+    "man": "Man.jpg",
+    "fox": "Fox.jpg",
+    "jet": "Jet.jpg",
 }
 
+images = {
+
+    "ng": "Ng.jpeg",
+
+}
 # Word list
 word = """
 the day was new and full of sun i got up from my bed pulled the rug back and placed my foot on the mat the cup i left near the pad was still warm my pen sat by the box right next to a tiny toy and an old cap it was time to pack my bag
@@ -29,7 +44,7 @@ outside the fog was low a van passed by a cab both stuck behind a big red bus i 
 
 on the road i saw a fox dash across the tar chasing a rat near a bin a guy waved at me from his hub he wore a wig and had an old arm band with a gem on it the dam down the way still leaked near the ash pit
 
-at the lab i saw a dot on the screen a bug in the code i tapped my pen and took notes on a pad my boss came by with a jug of tea he wore a vest with a bow and a tiny pin he gave me a nod and a bun big day he said i gave a weak smile
+at the lab i saw a dot on the screen a bug in the code i tapped my pen and took notes on a pad my boss prof ng came by with a jug of tea she wore a vest with a bow and a tiny pin she gave me a nod and a bun big day he said i gave a weak smile
 
 we met in the main room with a cog chart on the wall the orb above the lab table gave off a soft glow i passed a nut to a pal and dropped oil in a pan he used a pip and a peg to hold it in place
 
@@ -41,7 +56,9 @@ my dog slept by the door as the hen clucked in the yard a fly buzzed past the op
 
 the bed looked so good i dropped onto it pulling the rug over my toe and letting the fog roll in through the open tap a fig sat on the stand next to a peg and a pad the box was full of gear tools toys and even a saw id used once to fix a rod
 
-i felt at peace the map on the wall the bar i built with logs the nut jar in the orb light they all made it feel like home i set the fan to low checked the net once more and turned off the light just before sleep i thought of that cat and her leap
+i felt at peace the map on the wall the bar i built with logs the nut jar in the orb light they all made it feel like home i set the fan to low checked the net once more and turned off the light just before sleep i thought of that cat and her leap 
+
+prof ng is a math professor at northwestern she loves to teach math in class with pen and paper she has a kid and man
 """
 wordList = word.split()
 
@@ -131,3 +148,4 @@ def reset():
 if __name__ == '__main__':
     os.makedirs('static/temp', exist_ok=True)
     app.run(host='0.0.0.0', port=81)
+
